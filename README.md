@@ -1,5 +1,7 @@
 # WGT AI Hub
 
+[![CI](https://github.com/gsantos-design/wgt-ai-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/gsantos-design/wgt-ai-hub/actions/workflows/ci.yml)
+
 Single-service Node/Express app providing:
 - Simple public UI (`/public`) with lead form
 - API endpoints for Gemini chat and TTS
@@ -40,6 +42,9 @@ Other config:
 ## Deploy
 
 - Render: see `render.yaml`. Set environment variables in the Render dashboard.
+- One-click deploy to Render:
+
+  [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/gsantos-design/wgt-ai-hub)
 - GitHub Actions: uses Node 20 to install and run a lightweight check.
 
 ## Scripts
@@ -47,4 +52,3 @@ Other config:
 - `npm start` — start the server
 - `npm run dev` — same as start (non-watch)
 - `npm run check` — quick syntax check used by CI
-
