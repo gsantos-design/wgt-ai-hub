@@ -1,0 +1,32 @@
+:root { font-family: system-ui, Arial, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f7f7f9; color: #1f2937; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+h1 { font-size: 20px; margin: 0; }
+.badge { padding: 6px 10px; border-radius: 10px; font-size: 0.9rem; color: #fff; }
+.badge.checking { background: #7f8c8d; }
+.badge.ok { background: #27ae60; }
+.badge.warn { background: #e67e22; }
+.badge.error { background: #e74c3c; }
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+.card h2 { margin: 0 0 12px 0; font-size: 18px; }
+
+.chat-box { height: 300px; overflow: auto; border: 1px solid #eee; border-radius: 10px; padding: 12px; background: #fafafa; }
+.msg { margin: 6px 0; white-space: pre-wrap; line-height: 1.35; }
+.msg.user { color: #2c3e50; }
+.msg.assistant { color: #34495e; }
+
+.row { display: flex; gap: 8px; }
+.row input, .row textarea { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; }
+button { padding: 10px 14px; border-radius: 8px; background: #2d6cdf; color: #fff; border: none; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: default; }
+
+.lead { display: grid; gap: 10px; }
+.note { font-size: 0.9rem; }
+.note.ok { color: #27ae60; }
+.note.err { color: #e74c3c; }

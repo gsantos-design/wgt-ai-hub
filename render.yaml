@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: wgt-api
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: "npm ci"
+    startCommand: "node server.js"
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: APPS_SCRIPT_LEADS_URL
+        sync: false
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: LEAD_NOTIFY_TO
+        sync: false
+      - key: RECAPTCHA_SITE_KEY
+        sync: false
+      - key: RECAPTCHA_SECRET
+        sync: false
+      - key: RECAPTCHA_MIN_SCORE
+        value: "0.5"
+      - key: LEAD_MIN_AGE_MS
+        value: "800"
+
