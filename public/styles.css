@@ -1,32 +1,47 @@
-:root { font-family: system-ui, Arial, sans-serif; }
+:root {
+  --bg: #0b1020;
+  --panel: #121831;
+  --muted: #8ea0c0;
+  --text: #e9eefc;
+  --accent: #5b8cff;
+  --accent-2: #7bffa0;
+  --danger: #ff6b6b;
+  --radius: 14px;
+}
 * { box-sizing: border-box; }
-body { margin: 0; background: #f7f7f9; color: #1f2937; }
-.wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+body { margin:0; font-family: Inter, system-ui, Segoe UI, Arial, sans-serif; color: var(--text); background: radial-gradient(1200px 800px at 20% -10%, #1b2240 0%, #0b1020 40%), #0b1020; }
+.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+.header { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.brand { display:flex; align-items:center; gap:12px; }
+.brand .dot { width:12px; height:12px; background: linear-gradient(45deg, var(--accent), var(--accent-2)); border-radius:50%; box-shadow: 0 0 16px var(--accent); }
+.title { font-weight:700; letter-spacing: .3px; }
+.status { padding:6px 10px; border-radius:999px; font-size:.9rem; }
+.ok { background: #1f7a4d; }
+.warn { background: #7a5d1f; }
+.err { background: #7a1f2c; }
 
-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
-h1 { font-size: 20px; margin: 0; }
-.badge { padding: 6px 10px; border-radius: 10px; font-size: 0.9rem; color: #fff; }
-.badge.checking { background: #7f8c8d; }
-.badge.ok { background: #27ae60; }
-.badge.warn { background: #e67e22; }
-.badge.error { background: #e74c3c; }
+.grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; margin-top:18px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
 
-.grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+.card .head { padding:14px 16px; border-bottom:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.card .body { padding:16px; }
 
-.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
-.card h2 { margin: 0 0 12px 0; font-size: 18px; }
+.chat-log { height: 360px; overflow:auto; display:flex; flex-direction:column; gap:10px; }
+.msg { padding:10px 12px; border-radius:12px; max-width:85%; white-space:pre-wrap; line-height:1.4; }
+.msg.user { margin-left:auto; background: rgba(91,140,255,.18); border:1px solid rgba(91,140,255,.35); }
+.msg.bot { margin-right:auto; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); }
 
-.chat-box { height: 300px; overflow: auto; border: 1px solid #eee; border-radius: 10px; padding: 12px; background: #fafafa; }
-.msg { margin: 6px 0; white-space: pre-wrap; line-height: 1.35; }
-.msg.user { color: #2c3e50; }
-.msg.assistant { color: #34495e; }
+.row { display:flex; gap:10px; }
+.input { flex:1; padding:12px 14px; background:#0e1430; color:var(--text); border:1px solid rgba(255,255,255,.12); border-radius:12px; outline:none; }
+.btn { padding:12px 16px; border:none; border-radius:12px; cursor:pointer; color:#0b1020; background: linear-gradient(45deg, var(--accent), var(--accent-2)); font-weight:600; }
+.btn.secondary { background: rgba(255,255,255,.06); color: var(--text); border:1px solid rgba(255,255,255,.12); }
+.btn:disabled { opacity:.6; cursor:default; }
 
-.row { display: flex; gap: 8px; }
-.row input, .row textarea { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; }
-button { padding: 10px 14px; border-radius: 8px; background: #2d6cdf; color: #fff; border: none; cursor: pointer; }
-button:disabled { opacity: 0.6; cursor: default; }
-
-.lead { display: grid; gap: 10px; }
-.note { font-size: 0.9rem; }
-.note.ok { color: #27ae60; }
-.note.err { color: #e74c3c; }
+.small { color: var(--muted); font-size:.92rem; }
+.stack { display:grid; gap:10px; }
+.lead { display:grid; gap:10px; }
+.note { font-size:.9rem; }
+.note.ok { color: #8dffb3; }
+.note.err { color: var(--danger); }
+footer { opacity:.7; margin-top:22px; font-size:.9rem; text-align:center; }
